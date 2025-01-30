@@ -76,7 +76,7 @@ step "deploy-octopub-audits-chart" {
                   repository: ghcr.io/#{Octopus.Action.Package[octopub-audit-microservice-mysql].PackageId}
                   tag: #{Octopus.Action.Package[octopub-audit-microservice-mysql].PackageVersion}  
                 EOT
-            Octopus.Action.Kubernetes.ResourceStatusCheck = "True"
+            Octopus.Action.Kubernetes.ResourceStatusCheck = "False"
             Octopus.Action.Kubernetes.WaitForJobs = "False"
             Octopus.Action.RunOnServer = "false"
             Octopus.Action.Script.ScriptSource = "GitRepository"
